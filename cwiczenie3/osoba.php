@@ -18,4 +18,9 @@ class Osoba
     {
         return "Czesc mam na imie " . $this->imie;
     }
+
+    public function obliczWiek()
+    {
+        return " i mam " . (date('Y') - ($this->rok)) . " lata";
+    }
 }
