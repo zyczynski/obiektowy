@@ -5,7 +5,6 @@ class Osoba
     private $nazwisko;
     private $plec;
     private $rok;
-
     function __construct($imie, $nazwisko, $plec, $rok)
     {
         $this->imie = $imie;
@@ -13,14 +12,21 @@ class Osoba
         $this->plec = $plec;
         $this->rok = $rok;
     }
-
     public function powitaj()
     {
         return "Czesc mam na imie " . $this->imie;
     }
-
     public function obliczWiek()
     {
         return " i mam " . (date('Y') - ($this->rok)) . " lata";
+    }
+
+    public function Imie()
+    {
+      return $this->imie;
+    }
+    public function dodajZnajomego(Osoba $osoba)
+    {
+        return " dodal " . $osoba->Imie() . " do znajomych";
     }
 }
