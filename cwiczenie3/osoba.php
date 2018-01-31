@@ -5,6 +5,8 @@ class Osoba
     private $nazwisko;
     private $plec;
     private $rok;
+    private $przyjaciel;
+
     function __construct($imie, $nazwisko, $plec, $rok)
     {
         $this->imie = $imie;
@@ -27,6 +29,8 @@ class Osoba
     }
     public function dodajZnajomego(Osoba $osoba)
     {
+
+        $this->przyjaciel = $osoba->Imie();
         return " dodal " . $osoba->Imie() . " do znajomych";
     }
 }
