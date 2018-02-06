@@ -30,7 +30,18 @@ class Osoba
     public function dodajZnajomego(Osoba $osoba)
     {
 
-        $this->przyjaciel = $osoba->Imie();
+        $this->przyjaciel = $osoba;
         return " dodal " . $osoba->Imie() . " do znajomych";
+    }
+
+    public function roznicaWieku(Osoba $osoba)
+    {
+        $Y1 = $osoba->rok;
+        $Y2 = $this->rok;
+        $wiek1= new DateTime($Y1);
+        $wiek2 = new DateTime($Y2);
+        $roznica = $wiek1->diff($wiek2);
+        return "Roznica wieku mieszy przyjaciolmi wynosi " . $roznica->format('%y') . " lat.";
+
     }
 }
