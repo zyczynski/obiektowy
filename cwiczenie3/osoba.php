@@ -41,7 +41,43 @@ class Osoba
         $wiek1= new DateTime($Y1);
         $wiek2 = new DateTime($Y2);
         $roznica = $wiek1->diff($wiek2);
-        return "Roznica wieku mieszy przyjaciolmi wynosi " . $roznica->format('%y') . " lat.";
+
+        switch ($roznica->format('%y'))
+        {
+            case (1);
+                return "Roznica wieku miedzy przyjaciolmi wynosi " . $roznica->format('%y') . " rok.";
+                break;
+
+            case (2) || (3) || (4);
+                return "Roznica wieku miedzy przyjaciolmi wynosi " . $roznica->format('%y') . " lata.";
+                break;
+        }
+        if (($roznica->format('%y'))>(5))
+        {
+            return "Roznica wieku miedzy przyjaciolmi wynosi " . $roznica->format('%y') . " lat.";
+        }
+
 
     }
+}
+
+interface Pojazdy
+{
+   public function sredniaPredkosc();
+}
+
+class Pociag implements Pojazdy
+{
+    public function sredniaPredkosc()
+    {
+
+    }
+}
+
+class Samochod implements Pojazdy
+    {
+        public function sredniaPredkosc()
+        {
+
+        }
 }
