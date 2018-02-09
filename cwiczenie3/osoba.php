@@ -63,21 +63,21 @@ class Osoba
 
 interface Pojazdy
 {
-   public function sredniaPredkosc();
+   public function sredniaPredkosc($pp1, $ps);
 }
 
 class Pociag implements Pojazdy
 {
-    public function sredniaPredkosc()
+    public function sredniaPredkosc($pp, $ps)
     {
-
+        return $pp;
     }
 }
 
 class Samochod implements Pojazdy
     {
-        public function sredniaPredkosc()
+        public function sredniaPredkosc($pp, $ps)
         {
-
+            return $ps;
         }
-}
+    }
