@@ -16,5 +16,10 @@ echo $user2->obliczWiek() . "<br>";
 
 echo $user1->Imie();
 echo $user1->dodajZnajomego($user2);
-echo "</br>";
+
 echo $user1->roznicaWieku($user2);
+echo "</br>";
+
+$user1->pociag = " samochod";
+echo "</br>";
+echo $user1->pociag;

@@ -6,6 +6,7 @@ class Osoba
     private $plec;
     private $rok;
     private $przyjaciel;
+    private $transport =[];
 
     function __construct($imie, $nazwisko, $plec, $rok)
     {
@@ -38,27 +39,27 @@ class Osoba
     {
         $Y1 = $osoba->rok;
         $Y2 = $this->rok;
-        $wiek1= new DateTime($Y1);
+        $wiek1 = new DateTime($Y1);
         $wiek2 = new DateTime($Y2);
         $roznica = $wiek1->diff($wiek2);
 
-        switch ($roznica->format('%y'))
-        {
-            case (1);
-                return "Roznica wieku miedzy przyjaciolmi wynosi " . $roznica->format('%y') . " rok.";
-                break;
 
-            case (2) || (3) || (4);
-                return "Roznica wieku miedzy przyjaciolmi wynosi " . $roznica->format('%y') . " lata.";
-                break;
-        }
-        if (($roznica->format('%y'))>(5))
-        {
-            return "Roznica wieku miedzy przyjaciolmi wynosi " . $roznica->format('%y') . " lat.";
-        }
+        return "Roznica wieku miedzy przyjaciolmi wynosi " . $roznica->format('%y') . " lat.";
+    }
 
+
+    public function __set($co, $wartosc)
+    {
+        $this->transport[$co] = $wartosc;
+        echo "Preferowany transport to " . $co;
+    }
+
+    public function __get($co)
+    {
+        return "Preferowany transport to " . $this->transport[$co];
 
     }
+
 }
 
 interface Pojazdy
