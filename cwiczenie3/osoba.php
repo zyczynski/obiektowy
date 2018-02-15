@@ -6,7 +6,7 @@ class Osoba
     private $plec;
     private $rok;
     private $przyjaciel;
-    private $transport =[];
+    private $transport;
 
     function __construct($imie, $nazwisko, $plec, $rok)
     {
@@ -48,16 +48,15 @@ class Osoba
     }
 
 
-    public function __set($co, $wartosc)
+    public function setTransport($rodzajtransportu)
     {
-        $this->transport[$co] = $wartosc;
-        echo "Preferowany transport to " . $co;
+        $this->transport = $rodzajtransportu;
     }
 
-    public function __get($co)
-    {
-        return "Preferowany transport to " . $this->transport[$co];
 
+    public function getTransport()
+    {
+        return $this->transport;
     }
 
 }
