@@ -6,7 +6,7 @@ class Osoba
     private $plec;
     private $rok;
     private $przyjaciel;
-    private $transport;
+    private $transport = ["pociag", "samochod"];
 
     function __construct($imie, $nazwisko, $plec, $rok)
     {
@@ -47,8 +47,7 @@ class Osoba
         return "Roznica wieku miedzy przyjaciolmi wynosi " . $roznica->format('%y') . " lat.";
     }
 
-
-    public function setTransport($rodzajtransportu)
+    public function setTransport(Pojazdy $rodzajtransportu)
     {
         $this->transport = $rodzajtransportu;
     }
@@ -56,14 +55,20 @@ class Osoba
 
     public function getTransport()
     {
-        return $this->transport;
+
+            __toString();
+        {
+            return $this->transport;
+        }
     }
+
 
 }
 
 interface Pojazdy
 {
    public function sredniaPredkosc();
+
 }
 
 class Pociag implements Pojazdy
@@ -73,6 +78,7 @@ class Pociag implements Pojazdy
         $predkoscPociagu = 30;
         return $predkoscPociagu;
     }
+
 }
 
 class Samochod implements Pojazdy

@@ -20,6 +20,13 @@ echo "</br>";
 echo $user1->roznicaWieku($user2);
 echo "</br>";
 
-$user1->setTransport("pociag");
+$pociag = new Pociag();
+
+
+
+$user1->setTransport($pociag);
+
 echo $user1->getTransport();
+
+
 
