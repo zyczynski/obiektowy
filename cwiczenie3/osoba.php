@@ -55,8 +55,6 @@ class Osoba
 
     public function getTransport()
     {
-
-            __toString();
         {
             return $this->transport;
         }
@@ -68,6 +66,7 @@ class Osoba
 interface Pojazdy
 {
    public function sredniaPredkosc();
+   public function getName();
 
 }
 
@@ -79,6 +78,11 @@ class Pociag implements Pojazdy
         return $predkoscPociagu;
     }
 
+    public function getName()
+    {
+        return "Pociag";
+    }
+
 }
 
 class Samochod implements Pojazdy
@@ -88,4 +92,9 @@ class Samochod implements Pojazdy
             $predkoscSamochodu = 50;
             return $predkoscSamochodu ;
         }
-    }
+
+        public function getName()
+        {
+            return "Samochod";
+        }
+}

@@ -21,12 +21,13 @@ echo $user1->roznicaWieku($user2);
 echo "</br>";
 
 $pociag = new Pociag();
+$samochod = new Samochod();
 
 
 
-$user1->setTransport($pociag);
+$user1->setTransport($samochod);
 
-echo $user1->getTransport();
+echo $user1->getTransport()->getName();
 
 
 
