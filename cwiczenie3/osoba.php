@@ -6,7 +6,7 @@ class Osoba
     private $plec;
     private $rok;
     private $przyjaciel;
-    private $transport = ["pociag", "samochod"];
+    private $transport;
 
     function __construct($imie, $nazwisko, $plec, $rok)
     {
