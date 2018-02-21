@@ -1,27 +1,27 @@
 <?php
 
-include 'osoba.php';
+include 'person.php';
 
-$user1 = new Osoba("Piotr", "Kacala", "mezczyzna", 1986);
-$user2 = new Osoba("Bartek", "Zyczynski", "mezczyzna", 1985);
+$user1 = new Person("Piotr", "Kacala", "mezczyzna", 1986);
+$user2 = new Person("Bartek", "Zyczynski", "mezczyzna", 1985);
 
 $dataCzas = new DateTime();
 
-echo $user1->powitaj();
-echo $user1->obliczWiek() . '<br>';
+echo $user1->Hello();
+echo $user1->calculateAge() . '<br>';
 
-echo $user2->powitaj();
-echo $user2->obliczWiek() . "<br>";
+echo $user2->Hello();
+echo $user2->calculateAge() . "<br>";
 
 
-echo $user1->Imie();
-echo $user1->dodajZnajomego($user2);
+echo $user1->Name();
+echo $user1->addFriend($user2);
 echo "</br>";
 echo $user1->roznicaWieku($user2);
 echo "</br>";
 
-$pociag = new Pociag();
-$samochod = new Samochod();
+$pociag = new Train();
+$samochod = new Car();
 
 
 
