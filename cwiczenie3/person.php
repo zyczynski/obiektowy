@@ -8,6 +8,8 @@ class Person
     private $friend;
     /** @var Vehicles */
     private $transport;
+    /** @var Animals */
+    private $animal;
 
     function __construct($name, $surname, $sex, $year)
     {
@@ -29,11 +31,11 @@ class Person
     {
       return $this->name;
     }
-    public function addFriend(Person $osoba)
+    public function addFriend(Person $person)
     {
 
-        $this->friend = $osoba;
-        return " dodal " . $osoba->Name() . " do znajomych";
+        $this->friend = $person;
+        return " dodal " . $person->Name() . " do znajomych";
     }
 
     public function roznicaWieku(Person $person)
@@ -60,6 +62,20 @@ class Person
             return $this->transport;
         }
     }
+
+    public function setAnimalType (Animals $typeOfAnimal)
+    {
+        $this->animal = $typeOfAnimal;
+    }
+
+
+    public function getAnimalType()
+    {
+        {
+            return $this->animal;
+        }
+    }
+
 
 
 }
@@ -98,4 +114,25 @@ class Car implements Vehicles
         {
             return "Samochod";
         }
+}
+
+interface Animals
+{
+    public function getAnimalName();
+}
+
+class Cat implements Animals
+{
+    public function getAnimalName()
+    {
+        return "cat";
+    }
+}
+
+class Dog implements Animals
+{
+    public function getAnimalName()
+    {
+        return "dog";
+    }
 }

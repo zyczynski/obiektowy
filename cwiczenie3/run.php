@@ -28,6 +28,13 @@ $samochod = new Car();
 $user1->setTransport($samochod);
 
 echo $user1->getTransport()->getName();
+echo "<br>";
+
+$cat = new Cat();
+$dog = new Dog();
+
+$user1->setAnimalType($cat);
+echo $user1->getAnimalType()->getAnimalName();
 
 
 
