@@ -8,7 +8,7 @@ class Person
     private $friend;
     /** @var Vehicles */
     private $transport;
-    /** @var Animals */
+    /** @var Animal */
     private $animal;
 
     function __construct($name, $surname, $sex, $year)
@@ -63,7 +63,7 @@ class Person
         }
     }
 
-    public function setAnimalType (Animals $typeOfAnimal)
+    public function setAnimalType (Animal $typeOfAnimal)
     {
         $this->animal = $typeOfAnimal;
     }
@@ -116,12 +116,12 @@ class Car implements Vehicles
         }
 }
 
-interface Animals
+interface Animal
 {
     public function getAnimalName();
 }
 
-class Cat implements Animals
+class Cat implements Animal
 {
     public function getAnimalName()
     {
@@ -129,10 +129,11 @@ class Cat implements Animals
     }
 }
 
-class Dog implements Animals
+class Dog implements Animal
 {
     public function getAnimalName()
     {
         return "dog";
     }
 }
+//wazna zmiana

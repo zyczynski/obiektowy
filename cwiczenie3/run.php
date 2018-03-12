@@ -35,6 +35,7 @@ $dog = new Dog();
 
 $user1->setAnimalType($cat);
 echo $user1->getAnimalType()->getAnimalName();
+//wazna zmiana
 
 
 
