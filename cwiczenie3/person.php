@@ -119,6 +119,7 @@ class Car implements Vehicles
 interface Animal
 {
     public function getAnimalName();
+    public function wiek();
 }
 
 class Cat implements Animal
@@ -126,6 +127,11 @@ class Cat implements Animal
     public function getAnimalName()
     {
         return "cat";
+    }
+
+    public function wiek()
+    {
+
     }
 }
 
@@ -135,5 +141,10 @@ class Dog implements Animal
     {
         return "dog";
     }
+
+    public function wiek()
+    {
+        $rok = new DateTime('Y-m-d');
+        return (string)$rok - $rokUrodzenia;
+    }
 }
-//wazna zmiana

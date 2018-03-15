@@ -35,7 +35,11 @@ $dog = new Dog();
 
 $user1->setAnimalType($cat);
 echo $user1->getAnimalType()->getAnimalName();
-//wazna zmiana
+
+$rokUrodzenia = new DateTime('2000-02-01');
+$tofik = new Dog($rokUrodzenia);
+echo $tofik->wiek(); # powinno zwrócić 18
+
 
 
 
