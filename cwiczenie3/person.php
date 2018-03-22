@@ -1,4 +1,7 @@
 <?php
+
+include 'run.php';
+
 class Person
 {
     private $name;
@@ -10,6 +13,7 @@ class Person
     private $transport;
     /** @var Animal */
     private $animal;
+    private $today;
 
     function __construct($name, $surname, $sex, $year)
     {
@@ -144,7 +148,9 @@ class Dog implements Animal
 
     public function wiek()
     {
-        $rok = new DateTime('Y-m-d');
-        return (string)$rok - $rokUrodzenia;
+        $today = new DateTime('2018-03-22');
+        $wiekZwierza = $today->diff($rokUrodzenia);
+        return $wiekZwierza('%R%a years');
+
     }
 }
