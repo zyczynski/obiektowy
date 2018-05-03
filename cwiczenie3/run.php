@@ -30,15 +30,13 @@ $user1->setTransport($samochod);
 echo $user1->getTransport()->getName();
 echo "<br>";
 
-$cat = new Cat();
-$dog = new Dog();
 
 $user1->setAnimalType($cat);
 echo $user1->getAnimalType()->getAnimalName();
 
 $rokUrodzenia = new DateTime('2000-02-01');
 $tofik = new Dog($rokUrodzenia);
-echo $tofik->wiek(); # powinno zwrócić 18
+echo $tofik->wiek(); // powinno zwrócić 18
 
 
 

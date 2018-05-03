@@ -1,6 +1,6 @@
 <?php
 
-include 'run.php';
+
 
 class Person
 {
@@ -141,6 +141,18 @@ class Cat implements Animal
 
 class Dog implements Animal
 {
+    /**
+     * @var DateTime
+     */
+    private $dataUrodzenia;
+    private $name;
+
+    public function __construct(DateTime $dataUrodzenia, $name)
+    {
+        $this->dataUrodzenia = $dataUrodzenia;
+        $this->name = $name;
+    }
+
     public function getAnimalName()
     {
         return "dog";
@@ -149,8 +161,12 @@ class Dog implements Animal
     public function wiek()
     {
         $today = new DateTime('2018-03-22');
-        $wiekZwierza = $today->diff($rokUrodzenia);
-        return $wiekZwierza('%R%a years');
+        $wiekZwierza = $today->diff($this->dataUrodzenia);
 
+        //print_r($wiekZwierza);
+
+
+
+        return ($wiekZwierza->y);
     }
 }
